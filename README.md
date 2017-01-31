@@ -8,7 +8,7 @@ Features
 
 The following is the typical sequence of code on the output when moving from one step to the next:
 
-    Position   Bit1   Bit2
+    Position   Bit 1  Bit 2
     ----------------------
     Step 1     0      0
     1/4        1      0
