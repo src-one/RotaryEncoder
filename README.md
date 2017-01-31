@@ -9,14 +9,14 @@ Features
 The following is the typical sequence of code on the output when moving from one step to the next:
 
     Position   Bit1   Bit2
-    - - - - - - - - - - - -
-    Step1       0      0
-     1/4        1      0
-     1/2        1      1
-     3/4        0      1
-    Step2       0      0
+    ----------------------
+    Step1      0      0
+    1/4        1      0
+    1/2        1      1
+    3/4        0      1
+    Step2      0      0
 
-- From an initial 0 - 0, Bit1 goes high, Bit0 stays low
+- From an initial 0 - 0, Bit 1 goes high, Bit 0 stays low
 - Then both bits are high, halfway through the step
-- Then Bit1 goes low, but Bit2 stays high
+- Then Bit 1 goes low, but Bit 2 stays high
 - Finally at the end of the step, both bits return to 0
