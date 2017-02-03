@@ -30,11 +30,13 @@ void updateEncoder() {
 }
 
 void setup() {
+  Serial.begin(115200);
+
   pinMode(ENC_A, INPUT);
   pinMode(ENC_B, INPUT);
 
   attachInterrupt(digitalPinToInterrupt(ENC_A), interruptGateway, CHANGE);
-  //attachInterrupt(digitalPinToInterrupt(ENC_B), interruptGateway, CHANGE); // for double interrupt usage -> better detection
+  attachInterrupt(digitalPinToInterrupt(ENC_B), interruptGateway, CHANGE);
 }
 
 void loop() {
