@@ -1,4 +1,3 @@
-#include "Arduino.h"
 #include "RotaryEncoder.h"
 
 #define R_START 0x0

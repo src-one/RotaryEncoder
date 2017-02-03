@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 
-#define HALF_STEP
+// #define HALF_STEP use it for different type of rotary encoders
 
 #define DIR_NONE 0x0
 #define DIR_CW 0x10

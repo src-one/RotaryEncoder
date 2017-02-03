@@ -1,10 +1,11 @@
 #include "RotaryEncoder.h"
-
 RotaryEncoder encoder;
 
 #define ENC_A 2
 #define ENC_B 3
 
+int count = 0;
+int lastCount = 0;
 boolean interruptCalled = false;
 
 void updateOnInterrupt() {
@@ -15,17 +16,25 @@ void interruptGateway() {
   updateOnInterrupt();
 }
 
+void updateCount(int value) {
+  Serial.println("Value: " + String(value));
+}
+
 void updateEncoder() {
   unsigned char result = encoder.process(digitalRead(ENC_A), digitalRead(ENC_B));
-
   if (result == DIR_NONE) {
     // do nothing
   }
   else if (result == DIR_CW) {
-    Serial.println("turn left");
+    count ++;
   }
   else if (result == DIR_CCW) {
-    Serial.println("turn right");
+    count --;
+  }
+
+  if(lastCount != count) {
+    updateCount(count);
+    lastCount = count;
   }
 }
 
@@ -34,7 +43,6 @@ void setup() {
 
   pinMode(ENC_A, INPUT);
   pinMode(ENC_B, INPUT);
-
   attachInterrupt(digitalPinToInterrupt(ENC_A), interruptGateway, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENC_B), interruptGateway, CHANGE);
 }
@@ -42,7 +50,6 @@ void setup() {
 void loop() {
   if(interruptCalled == true) {
     updateEncoder();
-
     interruptCalled = false;
   }
 }
