@@ -43,6 +43,7 @@ void setup() {
 
   pinMode(ENC_A, INPUT);
   pinMode(ENC_B, INPUT);
+  
   attachInterrupt(digitalPinToInterrupt(ENC_A), interruptGateway, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENC_B), interruptGateway, CHANGE);
 }
