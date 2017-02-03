@@ -16,7 +16,7 @@ The following is the typical sequence of code on the output when moving from one
     3/4        0      1
     Step 2     0      0
 
-- From an initial 0 - 0, Bit 1 goes high, Bit 0 stays low
+- From an initial 0 - 0, Bit 1 goes high, Bit 2 stays low
 - Then both bits are high, halfway through the step
 - Then Bit 1 goes low, but Bit 2 stays high
 - Finally at the end of the step, both bits return to 0
